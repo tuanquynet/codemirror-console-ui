@@ -56,6 +56,18 @@
     margin-right: 0.5em;
 }
 
+.mirror-console-log-fail::before {
+    content: "✘";
+    color: #af0d07;
+    margin-right: 0.5em;
+}
+
+.mirror-console-log-success::before {
+    content: "▶";
+    color: #06ec4b;
+    margin-right: 0.5em;
+}
+
 .mirror-console-log-info::before {
     content: "▶";
     color: #8ee386;

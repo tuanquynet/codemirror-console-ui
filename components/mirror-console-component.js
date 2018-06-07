@@ -64,8 +64,21 @@ function intendMirrorConsole(element, defaultsText) {
         }
     };
 
+    function assert(condition) {
+        var args = Array.prototype.slice.call(arguments, 1);
+        args.unshift(condition ? 'SUCCESS' : 'FAILED');
+        
+        if (condition) {
+            printConsole(args, "mirror-console-log-row mirror-console-log-success");    
+        } else {
+            printConsole(args, "mirror-console-log-row mirror-console-log-fail");
+        }
+        
+        console.log.apply(console, args);
+    }
+
     var runCode = function() {
-        var context = { console: consoleMock };
+        var context = { console: consoleMock, assert: assert };
         var runContext = merge(context, userContext);
         mirror.runInContext(runContext, function(error, result) {
             if (error) {
