@@ -60,6 +60,7 @@
     content: "✘";
     color: #af0d07;
     margin-right: 0.5em;
+    font-size: 2rem;
 }
 
 .mirror-console-log-success::before {
